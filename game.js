@@ -37,12 +37,12 @@ function clicaButton(id){
           celulas[id - 1] = "O";
 
           if(vence(celulas, "O") == true){
-               console.log("humano venceu");
+               //console.log("humano venceu");
                document.getElementById("winText").innerHTML = "Humano venceu!";
           } else {
                var vazios = celulasVazias(celulas)
                if(vazios.length === 0){
-                    console.log("deu velha");
+                    //console.log("deu velha");
                     document.getElementById("winText").innerHTML = "Deu velha!";
                } else {
                IAJoga();
@@ -60,7 +60,7 @@ function IAJoga(){
      celulas[melhorJogada.index] = "X";
 
      if(vence(celulas, "X") == true){
-          console.log("computador venceu");
+          //console.log("computador venceu");
           document.getElementById("winText").innerHTML = "Computador venceu!";
      }
 }
