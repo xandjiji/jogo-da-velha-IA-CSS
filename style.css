@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'ARCADECLASSIC';
-    src: URL(./ARCADECLASSIC.ttf) format('truetype');
+    src: URL('https://github.com/xandjiji/jogo-da-velha-IA-CSS/raw/master/ARCADECLASSIC.TTF') format('truetype');
 }
 
 *{
