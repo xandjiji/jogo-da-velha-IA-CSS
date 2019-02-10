@@ -35,7 +35,13 @@ function clicaButton(id){
                console.log("humano venceu");
                document.getElementById("winText").innerHTML = "Humano venceu!";
           } else {
+               var vazios = celulasVazias(celulas)
+               if(vazios.length === 0){
+                    console.log("deu velha");
+                    document.getElementById("winText").innerHTML = "Deu velha!";
+               } else {
                IAJoga();
+               }
           }
      }
 }
