@@ -2,7 +2,10 @@ celulas = [0, 1, 2,
            3, 4, 5,
            6, 7, 8];
 
+renderTabuleiro();
 
+
+// desenha o tabuleiro em um estado inicial
 function renderTabuleiro(){
      let html = "<table>";
 
@@ -24,6 +27,8 @@ function renderTabuleiro(){
      document.getElementById("gamewindow").innerHTML = html;
 }
 
+
+// faz a jogada do humano -> verifica condicao de vitoria -> chama a jogada do computador
 function clicaButton(id){
 
      if(vence(celulas, "X") == false && vence(celulas, "O") == false){
@@ -46,6 +51,8 @@ function clicaButton(id){
      }
 }
 
+
+// faz a jogada do computador -> verifica condicao de vitoria
 function IAJoga(){
      var melhorJogada = minimax(celulas, "X");
      document.getElementById(melhorJogada.index + 1).innerHTML = "X";
@@ -58,10 +65,8 @@ function IAJoga(){
      }
 }
 
-function celulasVazias(tabuleiro){
-     return  tabuleiro.filter(s => s != "O" && s != "X");
-}
 
+// algoritmo Minimax
 function minimax(novoTabuleiro, jogador){
 
 
@@ -136,6 +141,8 @@ function minimax(novoTabuleiro, jogador){
 
 }
 
+
+// verifica se alguem venceu
 function vence(novoTabuleiro, jogador){
 
     // checa vitoria de "X" ou "O"
@@ -162,10 +169,16 @@ function vence(novoTabuleiro, jogador){
 
 }
 
+
+// retorna um array com os indices das jogadas possiveis no tabuleiro
+function celulasVazias(tabuleiro){
+     return  tabuleiro.filter(s => s != "O" && s != "X");
+}
+
+
+// reseta o tabuleiro
 function resetTabuleiro() {
     celulas = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     document.getElementById("winText").innerHTML = "";
     renderTabuleiro();
 }
-
-renderTabuleiro();
